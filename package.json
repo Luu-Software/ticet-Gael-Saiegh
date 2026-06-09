@@ -1,5 +1,5 @@
 {
-  "name": "tICet",
+  "name": "ticet",
   "version": "1.0.0",
   "description": "Sistema de consulta de precios de entradas para artistas musicales",
   "type": "module",
@@ -32,5 +32,19 @@
   "dependencies": {
     "open": "^10.1.0",
     "ws": "^8.18.0"
-  }
+  },
+  "main": "eslint.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luu-Software/ticet-Gael-Saiegh.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luu-Software/ticet-Gael-Saiegh/issues"
+  },
+  "homepage": "https://github.com/Luu-Software/ticet-Gael-Saiegh#readme"
 }
