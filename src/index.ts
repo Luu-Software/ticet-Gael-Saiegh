@@ -21,18 +21,6 @@ DARIO       |       50%
 */
 
 // COMPLETAR: Implementar la función calcularTotal que reciba el id del artista, la cantidad de entradas y un código de descuento (opcional) y devuelva el precio total a pagar en patacones.
-
- 
-
-cuandoPasa('seleccionarArtista', ({ id, cantidad, codigoDescuento }) => {
-  let cantidadNum: number = Number(cantidad);
-  let precio: number = calcularTotal(id, cantidadNum, codigoDescuento);
-  enviarAlFrontend('mostrarPrecio', precio);
-});
-
-
-iniciar();
-
 function calcularTotal( id: string, cant: number, codigo: string): number {
   let primerprecio: number
 
@@ -61,17 +49,34 @@ else if (id==="magdalena") {
  else if (id==="mugre") {
   primerprecio = 150
  }
+ else {
+  primerprecio= 0
+ }
 let precioporpersona: number = primerprecio*cant 
 
 if (codigo==="TIC10") {
-  primerprecio*0.9
- }
+  precioporpersona = precioporpersona*0.9  
+}
  if (codigo==="TIC20") {
-  primerprecio*0.8
+  primerprecio * 0.8
  }
  if (codigo==="DARIO") {
-  primerprecio*0.5
+  primerprecio * 0.5
  }
+
+ return precioporpersona;
+
  }
+ 
+
+cuandoPasa('seleccionarArtista', ({ id, cantidad, codigoDescuento }) => {
+  let cantidadNum: number = Number(cantidad);
+  let precio: number = calcularTotal(id, cantidadNum, codigoDescuento);
+  enviarAlFrontend('mostrarPrecio', precio);
+});
+
+
+iniciar();
+
 
 
